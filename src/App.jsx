@@ -1,28 +1,20 @@
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "./hooks/hooks";
-import { fetchProducts } from "./store/productSlice";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import List from "./components/List";
+import Cart from "./components/Cart";
+import StoreNavBar from "./components/StoreNavBar";
 
-function App() {
-  const products = useAppSelector((state) => state.products.products);
-  const dispatch = useAppDispatch();
-  console.log(products);
-
-  useEffect(() => {
-    dispatch(fetchProducts());
-  },[dispatch]);
-  
+const App = () => {
   return (
-    <>
-      <div>App will be here</div>
-      {products.map((product)=>(
-
-        <div key={product.id}>
-        <div key={product.id}>{product.id}</div>
-        <div key={product.id}>{product.description}</div>
-        </div>
-      ))}
-    </>
+    <div>
+      <BrowserRouter>
+        <StoreNavBar />
+        <Routes>
+          <Route path="/" element={<List />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
-}
+};
 
 export default App;
