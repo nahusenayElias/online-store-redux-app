@@ -1,0 +1,22 @@
+name: CI/CD
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: echo "Hello, CI/CD!"
+
+      - name: Another greeting
+        run: echo "Hello, CI/CD again!"
+
+      # - name: Try to fail
+      #   run: exit 1
+
+      - name: Success message
+        run: echo "All test passed!"
