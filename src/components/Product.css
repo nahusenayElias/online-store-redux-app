@@ -1,0 +1,78 @@
+ /* Container for the grid */
+.grid-image {
+  padding: 20px;
+}
+
+/* Grid layout for cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three cards in a row */
+  gap: 20px; /* Space between cards */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the grid */
+}
+
+/* Styling for each card */
+.card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+/* Hover effects for the card */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the image */
+.img-field {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Maintain aspect ratio */
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* Card body for content */
+.card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Title styling */
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Description styling */
+.card-text {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+/* Price styling */
+.price {
+  font-size: 1.25rem;
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two cards in a row for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* One card in a row for very small screens */
+  }
+}
