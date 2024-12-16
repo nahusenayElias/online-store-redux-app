@@ -22,7 +22,7 @@ const List = () => {
               <Card.Img
                 variant="top"
                 src={product.image}
-                style={{ height: "200px", objectFit: "cover" }}
+                style={{ height: "200px", objectFit: "contain" }}
               />
               {/* Card Body */}
               <Card.Body className="d-flex flex-column">
